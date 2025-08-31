@@ -72,7 +72,6 @@
     border-radius: 10px;
     padding: 60px 70px;
     background-color: rgba(255, 255, 255, 0.4);
-
 }
 
 .signup-container h2 {
@@ -276,7 +275,7 @@ span {
     grid-template-columns: 1fr;
     background-color: rgba(255, 255, 255, 0.4);
     z-index: 20;
-    gap: 10px;
+    gap: 1px;
     font-size: 18px;
 }
 
@@ -313,7 +312,8 @@ span {
 
 .create-post {
     display: grid;
-    gap: 40px; 
+    gap: 20px; 
+    width: auto;
 }
 
 .create-post input,
@@ -356,6 +356,8 @@ span {
     #font-select {
         width: 70%;
     }
+    
+
 }
 
 @media (max-width: 768px) {
@@ -369,7 +371,17 @@ span {
       font-size: 20px;
       padding: 15px 15px;
   }
+  .signup-container h2 {
+  text-align: center;
 }
+}
+
+@media (max-width: 480px) {
+    .signup-container h2 {
+        font-size: 15vw;
+    }
+}
+
 
 @keyframes slideIn {
   from { opacity: 0; transform: translateY(50px); }
