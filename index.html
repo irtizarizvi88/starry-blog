@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body     class="animate__animated animate__bounce">
+
+    <div class="starry-bg" id="starry-bg"></div>
+
+
+    <div class="form-container">
+        <div class="signup-container">
+            <h2>Signup</h2>
+            <input type="text" name="" placeholder="Enter your username" id="username">
+            <span id="usernameError">Please enter usename</span>
+            <input type="email" name="" placeholder="Enter your email" id="email">
+            <span id="emailError">Invalid email</span>
+            <input type="password" name="" placeholder="password" id="password">
+            <span id="passwordError">Invalid password</span>
+            <button class="signup-btn" onclick="ValidateSignup()">Sign Up</button>
+            <p>Already have an account <button class="btn-toggle" onclick="openPage('login')">Login</button></p>
+        </div>
+
+        <div class="login-container">
+            <h2>Login</h2>
+            <input type="text" placeholder="Enter your username" id="username-login">
+            <input type="password" placeholder="Enter your password" id="password-login">
+            <button class="login-btn" onclick="ValidateLogin()">Login</button>
+            <p>Don't have an account <button class="btn-toggle" onclick="openPage('signup')">Signup</button></p>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    const starContainer = document.getElementById("starry-bg");
+    if (!starContainer) return;
+
+    for (let i = 0; i < 700; i++) {
+        const star = document.createElement("div");
+        star.classList.add("star");
+        const size = Math.random() * 3 + 1;
+        star.style.width = star.style.height = size + "px";
+        star.style.top = Math.random() * window.innerHeight + "px";
+        star.style.left = Math.random() * window.innerWidth + "px";
+        star.style.animation = `twinkle ${Math.random() * 5 + 2}s infinite`;
+        starContainer.appendChild(star);
+    }
+
+    const style = document.createElement("style");
+    style.innerHTML = `
+        @keyframes twinkle {
+            0%,100% {opacity:0.8;}
+            50% {opacity:0.2;}
+        }
+    `;
+    document.head.appendChild(style);
+});
+    </script>
+    
+    <script src="app.js"></script>
+</body>
+</html>
